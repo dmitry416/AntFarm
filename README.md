@@ -1,6 +1,9 @@
 # ANT FARM
 #### An exciting game about ants!
 
+## Project design
+![Ресурс 4](https://github.com/user-attachments/assets/4d8910fe-8273-4702-9555-a022043cfe35)
+
 ## About the project
 The user logs in or registers on the site and they have the game available.
 
@@ -12,3 +15,4 @@ This is the base we want to have time to implement. If we have time left, we wil
 
 ## Progress Tracking Board
 We use the <a href="https://trello.com/b/vsnNsZNu/antfarm">Trello</a> board to roughly approximate how our project will work, as well as for diffing tasks.
+
