@@ -1,10 +1,19 @@
 from django.db import models
 
 class Ant(models.Model):
-    pass
+    id = models.IntegerField(primary_key=True)
+    ant_image = models.ImageField()
+    chances = models.FloatField()
 
 class Chest(models.Model):
-    pass
+    id = models.IntegerField(primary_key=True)
+    chest_image = models.ImageField()
+    chances = models.FloatField()
+    cost = models.IntegerField()
+
+class Boss(models.Model):
+    id = models.IntegerField(primary_key=True)
+    power = models.IntegerField()
 
 class User(models.Model):
     user_id = models.BigIntegerField(primary_key=True)
@@ -17,5 +26,3 @@ class UserAnts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ant = models.ForeignKey(Ant, on_delete=models.CASCADE)
     count = models.IntegerField(default=-1)
-
-
