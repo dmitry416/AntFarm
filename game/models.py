@@ -21,7 +21,7 @@ class Boss(models.Model):
 
 class User(models.Model):
     user_id = models.BigIntegerField(primary_key=True)
-    user_name = models.CharField(max_length=32)
+    username = models.CharField(max_length=32)
     chest = models.ForeignKey(Chest, on_delete=models.CASCADE)
     chest_open_time = models.DateTimeField(null=True)
     boss_date = models.DateField(null=True)
