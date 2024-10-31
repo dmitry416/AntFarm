@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    color: #333333;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #E6E6E6;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #CCCCCC;
+}
+
+.content {
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#header  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: block;
+    align-items: center;
+}
+
+.links, .link, .user-info, .user-money, .user-image {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.link a, .user-money, .user-image {
+    font-size: 1.3rem;
+    padding: 20px;
+}
+
+.user-money, .user-image {
+    padding: 10px;
+}
+
+#selected {
+    background: #59BE40;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+#selected a {
+    color: #fff;
+}
+
+#header a {
+    padding: 20px;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.box {
+    background: #FFFFFF;
+    width: 100%;
+    height: 40vh;
+    display: inline-block;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: 5px solid #CCCCCC;
+    vertical-align: top;
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.img {
+    object-fit: cover;
+}
+
+button {
+    border: none;
+    background: #59BE40;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #B3B3B3;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+footer span, footer a, footer div {
+    display: inline;
+    margin: auto 5%;
+    vertical-align: middle;
+}
+
+footer div img {
+    margin: auto 10px;
+}
+
+footer span, footer a {
+    color: #666666;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+/* Boss + Leaderboard */
+.in-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Boss */
+#boss {
+    width: 30%;
+    height: 35vh;
+    align-content: center;
+}
+
+#boss img, #boss button {
+    display: block;
+    margin: 20px auto;
+}
+
+#boss button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+/* Leaderboard */
+
+#leaderboard {
+    width: calc(70% - 40px);
+    height: 35vh;
+}
+
+#leaderboard h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leaderboard {
+    width: 100%;
+    /*height: 79%;*/
+    display: table;
+}
+
+.place {
+    width: 100%;
+    display: table-row;
+    justify-content: space-between;
+}
+
+.place-item {
+    display: table-cell;
+    color: #333333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 10px;
+    border-bottom: 2px solid #E6E6E6;
+}
