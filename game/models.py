@@ -19,6 +19,7 @@ class Boss(models.Model):
 
 
 class User(models.Model):
+    image_url = models.CharField(max_length=255)
     user_id = models.BigIntegerField(primary_key=True, unique=True)
     username = models.CharField(max_length=32)
 
