@@ -6,7 +6,7 @@
     <title>Ant Farm</title>
 </head>
 <body>
-<div class="wrapper">
+<div>
     <header>
         <div class="content" id="header">
             <nav>
@@ -32,17 +32,19 @@
             </div>
             <div class="box" id="leaderboard">
                 <h1>ЛУЧШИЕ ИГРОКИ</h1>
-                <div class="leaderboard">
-                    <div class="place">
-                        <div class="place-item" >№</div>
-                        <div class="place-item">Муравьи</div>
-                        <div class="place-item">Имя игрока</div>
-                    </div>
-                    <div class="place">
-                        <div class="place-item">1</div>
-                        <div class="place-item">1239123</div>
-                        <div class="place-item">User228</div>
-                    </div>
+                <div class="scroll-table" id="scroll-leader">
+                    <table class="leaderboard">
+                        <tr class="place">
+                            <td class="place-item">№</td>
+                            <td class="place-item">Муравьи</td>
+                            <td class="place-item">Имя игрока</td>
+                        </tr>
+                        <tr class="place">
+                            <td class="place-item">1</td>
+                            <td class="place-item">1239123</td>
+                            <td class="place-item">User228</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -62,12 +64,25 @@
         </div>
         <div class="box" id="items">
             <h1>ТВОИ ПРЕДМЕТЫ</h1>
-            <div class="item-holder">
-                <div class="item-card">
-                    <img src="../static/img/testImage.svg" alt="Item image">
-                    <span>Капля мёда</span>
-                    <button type="button">$ 16</button>
-                </div>
+            <div class="scroll-table">
+                <table class="item-holder">
+                    <tbody>
+                    <tr class="item-card">
+                        <td><img src="../static/img/testImage.svg" alt="Item image"></td>
+                        <td><span>Капля мёда</span></td>
+                        <td>
+                            <button type="button">$ 16</button>
+                        </td>
+                    </tr>
+                    <tr class="item-card">
+                        <td><img src="../static/img/testImage.svg" alt="Item image"></td>
+                        <td><span>Капля мёда</span></td>
+                        <td>
+                            <button type="button">$ 16</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             <button type="button">ПРОДАТЬ ВСЁ</button>
         </div>

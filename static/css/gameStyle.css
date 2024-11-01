@@ -67,7 +67,7 @@ header {
 
 .link:hover {
     background-color: #E6E6E6;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .user-money, .user-image {
@@ -132,7 +132,7 @@ button {
 button:hover, #selected:hover {
     background: #428c30;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 footer {
@@ -197,30 +197,51 @@ h1 {
 
 .leaderboard {
     width: 100%;
-    display: table;
-}
-
-.place {
-    width: 100%;
-    display: table-row;
-    justify-content: space-between;
 }
 
 .place-item {
-    display: table-cell;
     font-weight: bold;
     font-size: 1.2rem;
     margin: 10px;
+    text-align: center;
     border-bottom: 2px solid #E6E6E6;
+    padding: 5px;
+}
+
+#scroll-leader {
+    height: 220px;
 }
 
 /* Ants */
 
+#ants {
+    height: 450px;
+}
+
+.ant-holder {
+    height: 260px;
+    display: flex;
+    overflow-y: auto;
+}
+
+.ant-holder::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+
+.ant-holder::-webkit-scrollbar-thumb {
+    background: #59BE40;
+    border-radius: 5px;
+}
+
 .ant-card {
-    display: inline-list-item;
+    display: block;
     border: 8px solid #CCCCCC;
     border-radius: 20px;
     width: 160px;
+    padding: 5px;
+    margin: auto 10px;
 }
 
 .ant-card img, .ant-card span, .ant-card button {
@@ -252,6 +273,7 @@ h1 {
 
 #items {
     display: block;
+    height: 60vh;
 }
 
 #items button {
@@ -261,25 +283,22 @@ h1 {
 }
 
 .item-holder {
-    display: table;
     width: 100%;
 }
 
 .item-card {
-    display: table-row;
     width: 100%;
 }
 
-.item-card img, .item-card span, .item-card button {
-    display: table-cell;
-    text-align: right;
+.item-card td {
+    text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
-    margin: 0 auto;
-    padding: 10px;
-    border: 5px solid #CCCCCC;
+    padding: 3px;
+    border: 5px solid #FFFFFF;
     border-radius: 20px;
     vertical-align: middle;
+    background: #CCCCCC;
 }
 
 .item-card span {
@@ -288,10 +307,27 @@ h1 {
 }
 
 .item-card img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 10px;
     padding: 0;
+}
+
+.scroll-table {
+    height: 400px;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.scroll-table::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+}
+
+.scroll-table::-webkit-scrollbar-thumb {
+    background: #59BE40;
+    border-radius: 5px;
 }
 
 /* Chest */
