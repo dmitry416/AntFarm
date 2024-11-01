@@ -1,5 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def game(request):
-    return HttpResponse('<h1>GAME!!!</h1>')
+
+def get_leaderboard(request):
+    pass
+
+
+def get_boss(request):
+    pass
+
+
+def users_ants(request):
+    pass
