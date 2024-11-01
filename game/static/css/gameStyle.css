@@ -298,12 +298,11 @@ h1 {
     border: 5px solid #FFFFFF;
     border-radius: 20px;
     vertical-align: middle;
-    background: #CCCCCC;
+    background: #E6E6E6;
 }
 
 .item-card span {
     padding: 0;
-    background: #CCCCCC;
 }
 
 .item-card img {

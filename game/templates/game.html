@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="../static/css/gameStyle.css">
+    <link rel="stylesheet" href="{% static "css/gameStyle.css" %}">
     <meta charset="UTF-8">
     <title>Ant Farm</title>
 </head>
@@ -17,9 +18,9 @@
                 </div>
             </nav>
             <div class="user-info">
-                <div class="user-money">$ 19885</div>
+                <div class="user-money">$ {{ user.1 }}</div>
                 <div class="user-image">
-                    <img src="../static/img/testImage.svg" alt="User image">
+                    <img src="{% static user.0 %}" alt="User image">
                 </div>
             </div>
         </div>
@@ -27,7 +28,7 @@
     <div class="content">
         <div class="in-row">
             <div class="box" id="boss">
-                <img src="../static/img/testImage.svg" alt="Boss image">
+                <img src="{% static boss_img %}" alt="Boss image">
                 <button type="button">СРАЖАТЬСЯ</button>
             </div>
             <div class="box" id="leaderboard">
@@ -39,11 +40,13 @@
                             <td class="place-item">Муравьи</td>
                             <td class="place-item">Имя игрока</td>
                         </tr>
+                        {% for place in leaderboard %}
                         <tr class="place">
-                            <td class="place-item">1</td>
-                            <td class="place-item">1239123</td>
-                            <td class="place-item">User228</td>
+                            <td class="place-item">{{ place.0 }}</td>
+                            <td class="place-item">{{ place.1 }}</td>
+                            <td class="place-item">{{ place.2 }}</td>
                         </tr>
+                        {% endfor %}
                     </table>
                 </div>
             </div>
@@ -51,14 +54,16 @@
         <div class="box" id="ants">
             <h1>ТВОИ МУРАВЬИ</h1>
             <div class="ant-holder">
+                {% for ant in ants %}
                 <div class="ant-card">
-                    <img src="../static/img/testImage.svg" alt="Ant image">
-                    <span>x12</span>
-                    <button type="button">$ 128</button>
+                    <img src="{% static ant.0 %}" alt="Ant image">
+                    <span>x{{ ant.1 }}</span>
+                    <button type="button">$ {{ ant.2 }}</button>
                 </div>
+                {% endfor %}
             </div>
             <div class="ant-bottom">
-                <span>Всего: 228</span>
+                <span>Всего: {{ total_ants }}</span>
                 <button type="button">Отправить всех</button>
             </div>
         </div>
@@ -67,20 +72,13 @@
             <div class="scroll-table">
                 <table class="item-holder">
                     <tbody>
+                    {% for item in items %}
                     <tr class="item-card">
-                        <td><img src="../static/img/testImage.svg" alt="Item image"></td>
-                        <td><span>Капля мёда</span></td>
-                        <td>
-                            <button type="button">$ 16</button>
-                        </td>
+                        <td><img src="{% static item.0 %}" alt="Item image"></td>
+                        <td><span>{{ item.1 }}</span></td>
+                        <td><button type="button">$ {{ item.2 }}</button></td>
                     </tr>
-                    <tr class="item-card">
-                        <td><img src="../static/img/testImage.svg" alt="Item image"></td>
-                        <td><span>Капля мёда</span></td>
-                        <td>
-                            <button type="button">$ 16</button>
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -90,11 +88,11 @@
             <h1>СУНДУК</h1>
             <div class="chest">
                 <div class="left">
-                    <img src="../static/img/testImage.svg" alt="Chest image">
+                    <img src="{% static chest.0 %}" alt="Chest image">
                 </div>
                 <div class="right">
                     <button type="button">ОТКРЫТЬ</button>
-                    <button type="button">$ 228</button>
+                    <button type="button">$ {{ chest.1 }}</button>
                 </div>
             </div>
         </div>
@@ -103,9 +101,9 @@
         <span>Муравьиная ферма</span>
         <a href="#">Как играть?</a>
         <div class="icons">
-            <img src="../static/img/testImage.svg" alt="icon 1">
-            <img src="../static/img/testImage.svg" alt="icon 2">
-            <img src="../static/img/testImage.svg" alt="icon 3">
+            <img src="{% static "images/testImage.svg" %}" alt="icon 1">
+            <img src="{% static "images/testImage.svg" %}" alt="icon 2">
+            <img src="{% static "images/testImage.svg" %}" alt="icon 3">
         </div>
     </footer>
 </div>
