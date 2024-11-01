@@ -46,6 +46,10 @@ header {
     align-items: center;
 }
 
+.user-info:hover {
+    cursor: pointer;
+}
+
 .links, .link, .user-info, .user-money, .user-image {
     display: inline-block;
     vertical-align: middle;
@@ -56,14 +60,22 @@ header {
     padding: 20px;
 }
 
+.link {
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.link:hover {
+    background-color: #E6E6E6;
+    transition: 0.5s;
+}
+
 .user-money, .user-image {
     padding: 10px;
 }
 
 #selected {
     background: #59BE40;
-    padding: 7px;
-    border-radius: 10px;
 }
 
 #selected a {
@@ -83,7 +95,7 @@ header {
 .box {
     background: #FFFFFF;
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     display: inline-block;
     margin: 15px 0;
     padding: 20px;
@@ -113,8 +125,14 @@ button {
     border: none;
     background: #59BE40;
     color: #FFFFFF;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 10px;
+}
+
+button:hover, #selected:hover {
+    background: #428c30;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 footer {
@@ -163,7 +181,6 @@ footer a {
 
 #boss button {
     font-size: 1.2rem;
-    padding: 10px 20px;
 }
 
 /* Leaderboard */
@@ -173,14 +190,13 @@ footer a {
     height: 35vh;
 }
 
-#leaderboard h1 {
+h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
 .leaderboard {
     width: 100%;
-    /*height: 79%;*/
     display: table;
 }
 
@@ -192,9 +208,114 @@ footer a {
 
 .place-item {
     display: table-cell;
-    color: #333333;
     font-weight: bold;
     font-size: 1.2rem;
     margin: 10px;
     border-bottom: 2px solid #E6E6E6;
+}
+
+/* Ants */
+
+.ant-card {
+    display: inline-list-item;
+    border: 8px solid #CCCCCC;
+    border-radius: 20px;
+    width: 160px;
+}
+
+.ant-card img, .ant-card span, .ant-card button {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.ant-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+}
+
+.ant-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.ant-bottom span, .ant-bottom button {
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* Items */
+
+#items {
+    display: block;
+}
+
+#items button {
+    display: block;
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+.item-holder {
+    display: table;
+    width: 100%;
+}
+
+.item-card {
+    display: table-row;
+    width: 100%;
+}
+
+.item-card img, .item-card span, .item-card button {
+    display: table-cell;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 10px;
+    border: 5px solid #CCCCCC;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
+.item-card span {
+    padding: 0;
+    background: #CCCCCC;
+}
+
+.item-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 0;
+}
+
+/* Chest */
+
+.chest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+}
+
+.left {
+    border: 30px solid #CCCCCC;
+    background: #CCCCCC;
+    border-radius: 30px;
+}
+
+.right {
+
+}
+
+.right button {
+    display: block;
+    padding: 10px 50px;
+    margin: 30px auto;
+    font-size: 1.2rem;
 }
