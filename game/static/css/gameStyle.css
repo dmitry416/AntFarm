@@ -95,7 +95,7 @@ header {
 .box {
     background: #FFFFFF;
     width: 100%;
-    height: 45vh;
+    /*height: 300px;*/
     display: inline-block;
     margin: 15px 0;
     padding: 20px;
@@ -170,7 +170,7 @@ footer a {
 /* Boss */
 #boss {
     width: 30%;
-    height: 35vh;
+    height: 350px;
     align-content: center;
 }
 
@@ -187,7 +187,7 @@ footer a {
 
 #leaderboard {
     width: calc(70% - 40px);
-    height: 35vh;
+    height: 350px;
 }
 
 h1 {
@@ -273,7 +273,7 @@ h1 {
 
 #items {
     display: block;
-    height: 60vh;
+    height: 600px;
 }
 
 #items button {
