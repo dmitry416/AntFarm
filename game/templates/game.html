@@ -18,9 +18,9 @@
                 </div>
             </nav>
             <div class="user-info">
-                <div class="user-money">$ {{ user.1 }}</div>
+                <div class="user-money">$ {{ user.money }}</div>
                 <div class="user-image">
-                    <img src="{% static user.0 %}" alt="User image">
+                    <img src="{{ user.image_url }}" alt="User image">
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+from contextlib import nullcontext
+
 from django.db import models
 from django.template.defaultfilters import default
 
@@ -19,11 +21,11 @@ class Boss(models.Model):
 
 
 class User(models.Model):
-    image_url = models.CharField(max_length=255)
     user_id = models.BigIntegerField(primary_key=True, unique=True)
-    name = models.CharField(max_length=32)
+    image_url = models.CharField(max_length=255, null=True)
+    name = models.CharField(max_length=32, default='Hidden')
 
-    chest = models.ForeignKey(Chest, on_delete=models.CASCADE)
+    chest = models.ForeignKey(Chest, on_delete=models.CASCADE, null=True)
     chest_open_time = models.DateTimeField(null=True)
 
     ant_count = models.IntegerField(default=0)
