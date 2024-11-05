@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from game.models import User
 from other.utils import is_tg_hash_valid
@@ -20,6 +20,8 @@ def game(request):
             user.name = username if username else 'Hidden'
 
             user.save()
+
+            return redirect('game')
 
     user = User.objects.get(user_id=request.session.get('id'))
     boss_img = 'images/testImage.svg'
