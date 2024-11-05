@@ -22,6 +22,7 @@ def game(request):
             user.save()
 
             return redirect('game')
+        return redirect('auth')
 
     user = User.objects.get(user_id=request.session.get('id'))
     boss_img = 'images/testImage.svg'
