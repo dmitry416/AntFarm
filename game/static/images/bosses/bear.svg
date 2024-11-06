@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1561.36 1383.54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #1d1d1b;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 17px;
+      }
+
+      .cls-2 {
+        fill: #1d1d1b;
+      }
+
+      .cls-3 {
+        fill: #8a5d39;
+      }
+
+      .cls-4 {
+        fill: #542d10;
+      }
+
+      .cls-5 {
+        fill: #614226;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <circle class="cls-4" cx="1290.8" cy="270.56" r="262.06"/>
+      <circle class="cls-3" cx="1270.44" cy="294.81" r="213.69"/>
+      <circle class="cls-4" cx="270.56" cy="270.56" r="262.06"/>
+      <circle class="cls-3" cx="290.92" cy="294.81" r="213.69"/>
+      <ellipse class="cls-5" cx="774.85" cy="789.68" rx="652.15" ry="585.37"/>
+      <ellipse class="cls-4" cx="780.32" cy="1103.94" rx="344.44" ry="220.86"/>
+      <circle class="cls-2" cx="593.3" cy="761.34" r="60.68"/>
+      <circle class="cls-2" cx="968.06" cy="761.34" r="60.68"/>
+      <ellipse class="cls-2" cx="789.09" cy="904.4" rx="118.29" ry="70.17"/>
+      <polyline class="cls-1" points="789.09 974.57 789.09 1153.43 571.73 1175.44"/>
+      <line class="cls-1" x1="789.09" y1="1153.43" x2="968.06" y2="1186.45"/>
+      <line class="cls-1" x1="532.62" y1="532.62" x2="653.98" y2="627.85"/>
+      <line class="cls-1" x1="1028.74" y1="532.62" x2="907.38" y2="627.85"/>
+    </g>
+  </g>
+</svg>
