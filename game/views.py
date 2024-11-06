@@ -5,9 +5,7 @@ from other.utils import is_tg_hash_valid
 
 
 def game(request):
-    tg_hash = request.GET.get('hash')
-
-    if tg_hash:
+    if request.GET.get('hash'):
         if is_tg_hash_valid(request.GET.dict()):
             tg_id = int(request.GET['id'])
             username = request.GET.get('username')
