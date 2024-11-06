@@ -35,3 +35,7 @@ class UserAnts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ant = models.ForeignKey(Ant, on_delete=models.CASCADE)
     count = models.IntegerField(default=-1)
+
+
+class GameState(models.Model):
+    current_boss = models.ForeignKey(Boss, on_delete=models.CASCADE)

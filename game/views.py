@@ -7,7 +7,7 @@ def game(request):
     user = ('images/testImage.svg', 19885)
     boss_img = 'images/testImage.svg'
     leaderboard = [(i + 1, leader.ant_count, leader.name) for i, leader in
-                   enumerate(get_leaderboard())[:len(get_leaderboard())]]
+                   enumerate(get_leaderboard())]
 
     ants = [('images/testImage.svg', 12, 128), ('images/testImage.svg', 8, 85), ('images/testImage.svg', 3, 39)]
     total_ants = sum(map(lambda x: x[1], ants))
@@ -21,5 +21,7 @@ def game(request):
 
 
 def get_leaderboard() -> list[User]:
-    return User.objects.all().order_by('-ant_count')[:20] if len(User.objects.all()) > 20 else User.objects.all().order_by(
-        '-ant_count')
+    return User.objects.all().order_by('-ant_count')[:20]
+
+def user_money(request):
+    user_id = request.session['id']
