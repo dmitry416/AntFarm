@@ -21,6 +21,7 @@ class Boss(models.Model):
 class User(models.Model):
     user_id = models.BigIntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=32)
+    image_url = models.CharField(max_length=255, null=True)
 
     chest = models.ForeignKey(Chest, on_delete=models.CASCADE)
     chest_open_time = models.DateTimeField(null=True)
@@ -35,7 +36,3 @@ class UserAnts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ant = models.ForeignKey(Ant, on_delete=models.CASCADE)
     count = models.IntegerField(default=-1)
-
-
-class GameState(models.Model):
-    current_boss = models.ForeignKey(Boss, on_delete=models.CASCADE)
