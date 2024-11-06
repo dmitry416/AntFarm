@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from game.models import User
+from game.models import User, UserAnts
 from other.utils import is_tg_hash_valid
 
 
@@ -39,5 +39,9 @@ def game(request):
 def get_leaderboard() -> list[User]:
     return User.objects.all().order_by('-ant_count')[:20]
 
-def user_money(request):
+
+def get_users_ants(request):
     user_id = request.session['id']
+
+
+

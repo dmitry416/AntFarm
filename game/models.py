@@ -6,6 +6,8 @@ class Ant(models.Model):
     path_to_image = models.CharField(max_length=255)
     chances = models.FloatField(default)
 
+    minimal_cost = models.IntegerField(default=0)
+
 
 class Chest(models.Model):
     path_to_image = models.CharField(max_length=255)
@@ -23,7 +25,7 @@ class User(models.Model):
     name = models.CharField(max_length=32)
     image_url = models.CharField(max_length=255, null=True)
 
-    chest = models.ForeignKey(Chest, on_delete=models.CASCADE)
+    chest = models.ForeignKey(Chest, on_delete=models.CASCADE, default=None, null=True)
     chest_open_time = models.DateTimeField(null=True)
 
     ant_count = models.IntegerField(default=0)
