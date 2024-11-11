@@ -354,3 +354,125 @@ h1 {
     margin: 30px auto;
     font-size: 1.2rem;
 }
+
+.boss--fight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.boss--fight .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #C0C0C0;
+    opacity: 1;
+    z-index: 0;
+}
+
+.boss--panel {
+    position: relative;
+    z-index: 2;
+    width: 550px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0,0,0, .4);
+    background-color: #fff;
+    padding: 30px;
+
+     display: flex;
+    justify-content: space-between;
+}
+
+.close--btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.description--boss {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}
+
+.left--boss {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.boss--image {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.boss--name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.left--boss,
+.right--boss {
+    width: 45%;
+    padding: 20px;
+}
+
+.boss--image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 70px;
+    border-radius: 5%;
+
+}
+
+.boss--name {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.change--win {
+    font-size: 18px;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+.change {
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: 25px;
+    margin-left: 70px;
+}
+
+.btn--fight {
+    margin-top: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn--fight:hover {
+    background-color: #45a049;
+}
