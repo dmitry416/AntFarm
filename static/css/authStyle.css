@@ -60,6 +60,10 @@ header h1 {
     margin-bottom: 20px;
 }
 
+.tg-login-wrapper {
+    transform: scale(1.1) !important;
+}
+
 button {
     border: none;
     background: #59BE40;
@@ -69,8 +73,11 @@ button {
     font-size: 1.2rem;
     cursor: pointer;
     transition: 0.5s;
-    width: 250px;
-    display: block;
+    width: 258px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 10px auto;
 }
 
