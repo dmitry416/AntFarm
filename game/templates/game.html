@@ -3,6 +3,8 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="{% static "css/gameStyle.css" %}">
+    <script defer src="{% static "js/jquery-3.7.1.min.js" %}"></script>
+    <script defer src="{% static "js/actions.js" %}"></script>
     <meta charset="UTF-8">
     <title>Ant Farm</title>
 </head>
@@ -29,7 +31,7 @@
         <div class="in-row">
             <div class="box" id="boss">
                 <img src="{% static boss_img %}" alt="Boss image">
-                <button type="button">СРАЖАТЬСЯ</button>
+                <button type="button" class="fight-open">СРАЖАТЬСЯ</button>
             </div>
             <div class="box" id="leaderboard">
                 <h1>ЛУЧШИЕ ИГРОКИ</h1>
@@ -58,13 +60,13 @@
                 <div class="ant-card">
                     <img src="{% static ant.0 %}" alt="Ant image">
                     <span>x{{ ant.1 }}</span>
-                    <button type="button">$ {{ ant.2 }}</button>
+                    <button type="button" class="buy">$ {{ ant.2 }}</button>
                 </div>
                 {% endfor %}
             </div>
             <div class="ant-bottom">
-                <span>Всего: {{ total_ants }}</span>
-                <button type="button">Отправить всех</button>
+                <span id="total-ants">Всего: {{ total_ants }}</span>
+                <button type="button" class="send-all">Отправить всех</button>
             </div>
         </div>
         <div class="box" id="items">
@@ -76,13 +78,13 @@
                     <tr class="item-card">
                         <td><img src="{% static item.0 %}" alt="Item image"></td>
                         <td><span>{{ item.1 }}</span></td>
-                        <td><button type="button">$ {{ item.2 }}</button></td>
+                        <td><button type="button" class="sell">$ {{ item.2 }}</button></td>
                     </tr>
                     {% endfor %}
                     </tbody>
                 </table>
             </div>
-            <button type="button">ПРОДАТЬ ВСЁ</button>
+            <button type="button" class="sell-all">ПРОДАТЬ ВСЁ</button>
         </div>
         <div class="box" id="chest">
             <h1>СУНДУК</h1>
@@ -91,8 +93,8 @@
                     <img src="{% static chest.0 %}" alt="Chest image">
                 </div>
                 <div class="right">
-                    <button type="button">ОТКРЫТЬ</button>
-                    <button type="button">$ {{ chest.1 }}</button>
+                    <button type="button" class="chest-open">ОТКРЫТЬ</button>
+                    <button type="button" class="chest-sell">$ {{ chest.1 }}</button>
                 </div>
             </div>
         </div>
