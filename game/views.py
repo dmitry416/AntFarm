@@ -14,7 +14,7 @@ def game(request):
             request.session['id'] = tg_id
 
             user, created = User.objects.get_or_create(user_id=tg_id)
-            user.image_url = photo_url if photo_url else 'https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg'
+            user.image_url = photo_url
             user.name = username if username else 'Hidden'
 
             user.save()

@@ -1,6 +1,6 @@
 let UpdateAnts = function () {
     $(".ant-card").remove();
-    $.get("api/ants",
+    $.get("api/userants",
         function (data, textStatus) {
             $.each(data["ants"], function (i, val) {
                 $(".ant-holder").append(`
@@ -130,3 +130,11 @@ $('.chest-sell').click(function () {
     UpdateChest();
     UpdateMoney();
 });
+
+let main = function () {
+    // UpdateItems();
+    // UpdateMoney();
+    UpdateAnts();
+}
+
+main();
