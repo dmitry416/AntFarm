@@ -18,6 +18,7 @@ def game(request):
             user.name = username if username else 'Hidden'
 
             user.save()
+            user.link_to_ants()
 
             return redirect('game')
         return redirect('auth')

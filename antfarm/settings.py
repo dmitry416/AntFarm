@@ -2,11 +2,11 @@ from pathlib import Path
 
 from django.urls import reverse_lazy
 
-from config import DJANGO_SECRET
+import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = DJANGO_SECRET
+SECRET_KEY = config.DJANGO_SECRET
 
 DEBUG = True
 
@@ -59,10 +59,11 @@ WSGI_APPLICATION = 'antfarm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'antfarm',
-        'USER': 'django_admin',
-        'PASSWORD': '12345',
-        'HOST': 'localhost'
+        'NAME': config.DB_NAME,
+        'USER': config.DB_LOGIN,
+        'PASSWORD': config.DB_PASS,
+        'HOST': config.DB_HOST,
+        'PORT': config.DB_PORT
     }
 }
 
