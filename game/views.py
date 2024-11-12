@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from game.models import User
+from game.models import User, UserAnts
 from other.utils import is_tg_hash_valid
 
 
@@ -24,7 +24,8 @@ def game(request):
 
     user = User.objects.get(user_id=request.session.get('id'))
     boss_img = 'images/testImage.svg'
-    leaderboard = [(1, 1239123, 'User228'), (2, 123123, 'UserGandon'), (3, 123, 'Niiggaaaa'), (4, 0, 'dmitrywall.ru')]
+    leaderboard = [request]
+
     ants = [('images/testImage.svg', 12, 128), ('images/testImage.svg', 8, 85), ('images/testImage.svg', 3, 39)]
     total_ants = sum(map(lambda x: x[1], ants))
     items = [('images/testImage.svg', 'Капля мёда', 16), ('images/testImage.svg', 'Капля спермы', 58),
