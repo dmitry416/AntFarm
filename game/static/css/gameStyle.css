@@ -446,9 +446,9 @@ h1 {
 .boss--name {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+
+    text-align: left;
+    margin-left: 50%;
 }
 
 .change--win {
