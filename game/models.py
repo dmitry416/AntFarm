@@ -21,10 +21,8 @@ class Ant(models.Model):
 
     def get_random_item(self):
         ant_item_chances = AntItemChance.objects.filter(ant=self)
-        print(ant_item_chances)
         weights = [chance.weight for chance in ant_item_chances]
         ant_item_chance = random.choices(ant_item_chances, weights=weights, k=1)[0]
-        print(ant_item_chance)
         return ant_item_chance.item
 
     def __str__(self):
@@ -37,13 +35,17 @@ class AntItemChance(models.Model):
     weight = models.IntegerField()
 
     def __str__(self):
-        return f'{self.ant.name}->{self.item.name}'
+        return f'{self.ant.name}->{self.item.name}->{self.weight}'
 
 
 class Chest(models.Model):
+    name = models.CharField(max_length=255)
     path_to_image = models.CharField(max_length=255)
     cost = models.IntegerField()
     weight = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 
 class ChestAntChance(models.Model):
@@ -51,10 +53,17 @@ class ChestAntChance(models.Model):
     ant = models.ForeignKey(Ant, on_delete=models.CASCADE)
     weight = models.IntegerField()
 
+    def __str__(self):
+        return f'{self.chest}->{self.ant.name}->{self.weight}'
+
 
 class Boss(models.Model):
+    name = models.CharField(max_length=255)
     path_to_image = models.CharField(max_length=255)
     power = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.name}->{self.power}'
 
 
 class User(models.Model):
@@ -69,6 +78,9 @@ class User(models.Model):
 
     money = models.IntegerField(default=0)
     boss_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.name} ({self.user_id})'
 
 
 class UserAnts(models.Model):
@@ -95,6 +107,7 @@ class UserItems(models.Model):
 
     def __str__(self):
         return f'{self.user.name}->{self.item.name}'
+
 
 class ServerState(models.Model):
     current_boss = models.ForeignKey(Boss, on_delete=models.SET_NULL, null=True)
