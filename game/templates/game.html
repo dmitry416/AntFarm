@@ -15,8 +15,8 @@
             <nav>
                 <div class="links">
                     <div class="link" id="selected"><a href="#">Играть</a></div>
-                    <div class="link"><a href="#">Друзья</a></div>
-                    <div class="link"><a href="#">Новости</a></div>
+{#                    <div class="link"><a href="#">Друзья</a></div>#}
+{#                    <div class="link"><a href="#">Новости</a></div>#}
                 </div>
             </nav>
             <div class="user-info">
@@ -29,10 +29,10 @@
     </header>
     <div class="content">
         <div class="in-row">
-            <div class="box" id="boss">
-                <img src="{% static boss_img %}" alt="Boss image">
-                <button type="button" class="fight-open">СРАЖАТЬСЯ</button>
-            </div>
+{#            <div class="box" id="boss">#}
+{#                <img src="{% static boss_img %}" alt="Boss image">#}
+{#                <button type="button" class="fight-open">СРАЖАТЬСЯ</button>#}
+{#            </div>#}
             <div class="box" id="leaderboard">
                 <h1>ЛУЧШИЕ ИГРОКИ</h1>
                 <div class="scroll-table" id="scroll-leader">
@@ -87,27 +87,28 @@
             </div>
             <button type="button" class="sell-all">ПРОДАТЬ ВСЁ</button>
         </div>
-        <div class="box" id="chest">
-            <h1>СУНДУК</h1>
-            <div class="chest">
-                <div class="left">
-                    <img src="{% static chest.0 %}" alt="Chest image">
-                </div>
-                <div class="right">
-                    <button type="button" class="chest-open">ОТКРЫТЬ</button>
-                    <button type="button" class="chest-sell">$ {{ chest.1 }}</button>
-                </div>
-            </div>
-        </div>
+{#        <div class="box" id="chest">#}
+{#            <h1>СУНДУК</h1>#}
+{#            <div class="chest">#}
+{#                <div class="left">#}
+{#                    <img src="{% static chest.0 %}" alt="Chest image">#}
+{#                </div>#}
+{#                <div class="right">#}
+{#                    <button type="button" class="chest-open">ОТКРЫТЬ</button>#}
+{#                    <button type="button" class="chest-sell">$ {{ chest.1 }}</button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
     </div>
     <footer>
         <span>Муравьиная ферма</span>
-        <a href="#">Как играть?</a>
-        <div class="icons">
-            <img src="{% static "images/testImage.svg" %}" alt="icon 1">
-            <img src="{% static "images/testImage.svg" %}" alt="icon 2">
-            <img src="{% static "images/testImage.svg" %}" alt="icon 3">
-        </div>
+{#        <a href="#">Как играть?</a>#}
+{#        <div class="icons">#}
+{#            <img src="{% static "images/testImage.svg" %}" alt="icon 1">#}
+{#            <img src="{% static "images/testImage.svg" %}" alt="icon 2">#}
+{#            <img src="{% static "images/testImage.svg" %}" alt="icon 3">#}
+{#        </div>#}
+        <span>Все права наверное защищены</span>
     </footer>
 </div>
 </body>
