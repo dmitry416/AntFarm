@@ -2,9 +2,11 @@ from pathlib import Path
 
 from django.urls import reverse_lazy
 
+from config import DJANGO_SECRET
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-f*m0!wbfheh^a32120bs-86@f*-4hl#x928!r^iu$f3vqx7b29'
+SECRET_KEY = DJANGO_SECRET
 
 DEBUG = True
 
@@ -18,10 +20,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'custom_auth',
-    'game'
+    'game',
+    'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'other.middlewares.AuthMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

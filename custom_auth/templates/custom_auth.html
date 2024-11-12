@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{% static "css/customAuthStyle.css" %}">
+    <meta charset="UTF-8">
+    <title>Ant Farm</title>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="content">
+            <h1>МУРАВЬИНАЯ ФЕРМА</h1>
+        </div>
+    </header>
+    <div class="content">
+        <div class="box" id="auth">
+            <h2>РЕГИСТРАЦИЯ</h2>
+            <div class="tg-login-wrapper">
+                <script async src="https://telegram.org/js/telegram-widget.js?22"
+                        data-telegram-login="muravjinayafermabot"
+                        data-size="large" data-auth-url="http://127.0.0.1:8000/" data-request-access="write"></script>
+            </div>
+            <button type="button" id="about-authors">Об авторах</button>
+            <a href="#" id="how-to-play">Как играть?</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

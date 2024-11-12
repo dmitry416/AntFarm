@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    color: #333333;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #E6E6E6;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+header {
+    width: 100%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #CCCCCC;
+    padding: 15px 0;
+}
+
+.content {
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.content:not(header .content) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+.box {
+    background: #FFFFFF;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 20px;
+    border-bottom: 5px solid #CCCCCC;
+}
+
+.box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.tg-login-wrapper {
+    transform: scale(1.1) !important;
+}
+
+button {
+    border: none;
+    background: #59BE40;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 258px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+#about-authors {
+    background: #fff;
+    color: #333;
+    border: 4px solid #333;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #428c30;
+}
+
+
+#how-to-play {
+    color: #007bff;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+
+@media (max-height: 600px) {
+    .content:not(header .content) {
+        position: static;
+        transform: none;
+    }
+}

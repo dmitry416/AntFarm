@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 966.22 1355.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3c3c3b;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 27px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-5 {
+        stroke: #1d1d1b;
+      }
+
+      .cls-2 {
+        fill: #7b6a58;
+      }
+
+      .cls-3 {
+        fill: #7b746b;
+      }
+
+      .cls-4 {
+        stroke: #45362e;
+      }
+
+      .cls-4, .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <ellipse class="cls-3" cx="382.53" cy="733.12" rx="517.18" ry="45.13" transform="translate(-397.97 1006.3) rotate(-81.74)"/>
+      <ellipse class="cls-3" cx="648.88" cy="733.12" rx="45.13" ry="517.18" transform="translate(-98.64 100.88) rotate(-8.26)"/>
+      <polyline class="cls-5" points="435.62 253.69 205.82 35.11 71.03 266.18"/>
+      <polyline class="cls-5" points="406.12 355.7 245.4 230.77 13.5 521.22"/>
+      <polyline class="cls-5" points="455.38 513.55 253.32 405.46 71.03 794.73"/>
+      <polyline class="cls-5" points="597.76 259 822.02 35.11 899.05 327.8"/>
+      <polyline class="cls-5" points="626.08 358.98 771.74 230.77 952.72 564.25"/>
+      <polyline class="cls-5" points="594.87 496.93 748.41 405.46 899.05 794.73"/>
+      <ellipse class="cls-2" cx="517.44" cy="922.51" rx="59.11" ry="419.78"/>
+      <ellipse class="cls-2" cx="517.44" cy="382.78" rx="106.17" ry="166.84"/>
+      <circle class="cls-2" cx="517.44" cy="122.13" r="108.63"/>
+      <circle class="cls-1" cx="440.02" cy="82.05" r="68.55"/>
+      <circle class="cls-1" cx="594.87" cy="82.05" r="68.55"/>
+      <path class="cls-4" d="M517.44,178.97s163.73,248.96,145.97,727.43"/>
+    </g>
+  </g>
+</svg>

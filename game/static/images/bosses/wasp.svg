@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1063.86 1547.43">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 20px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        stroke: #1d1d1b;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-10, .cls-11 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-8, .cls-10, .cls-11 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-9, .cls-10, .cls-11 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 16px;
+      }
+
+      .cls-2, .cls-4, .cls-6 {
+        fill: #1d1d1b;
+      }
+
+      .cls-3 {
+        fill: #fcea10;
+      }
+
+      .cls-4, .cls-10 {
+        stroke-width: 10px;
+      }
+
+      .cls-5 {
+        fill: #c2b410;
+      }
+
+      .cls-7 {
+        fill: #fcee68;
+      }
+
+      .cls-8 {
+        fill: #8e8c6b;
+        stroke-width: 15px;
+      }
+
+      .cls-8, .cls-9 {
+        stroke-linejoin: round;
+      }
+
+      .cls-9 {
+        stroke-width: 34px;
+      }
+
+      .cls-11 {
+        stroke: #fcea10;
+        stroke-width: 27px;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <polygon class="cls-2" points="532.57 1455.96 550.17 1521.4 574.91 1455.96 532.57 1455.96"/>
+      <ellipse class="cls-8" cx="349.29" cy="923.46" rx="525.64" ry="69.05" transform="translate(-631.27 1038.72) rotate(-75.99)"/>
+      <ellipse class="cls-8" cx="745.24" cy="923.46" rx="69.05" ry="525.64" transform="translate(-201.45 207.96) rotate(-14.01)"/>
+      <path class="cls-3" d="M750.5,1016.27c0,152.62-105.64,444.61-196.63,444.61s-211.38-291.99-211.38-444.61,91.34-276.34,204.01-276.34,204.01,123.72,204.01,276.34Z"/>
+      <ellipse class="cls-6" cx="546.49" cy="570.8" rx="158.03" ry="184.97"/>
+      <ellipse class="cls-3" cx="546.49" cy="272.41" rx="142.77" ry="125.71"/>
+      <path class="cls-10" d="M576.86,231.75S667.3,25.97,833.76,32.52"/>
+      <path class="cls-10" d="M508.71,231.75S496.91,14.17,310.79,5"/>
+      <ellipse class="cls-4" cx="627.98" cy="258.15" rx="44.56" ry="24.9" transform="translate(123.16 712.19) rotate(-64.31)"/>
+      <ellipse class="cls-4" cx="472.01" cy="258.15" rx="24.9" ry="44.56" transform="translate(-65.25 230.09) rotate(-25.69)"/>
+      <path class="cls-10" d="M549.44,392.07c.7,7.06.92,15.18.55,24.49,0,0-1.32-11.05-.55-24.49Z"/>
+      <path class="cls-7" d="M601.36,349.71c-41.21-18.23-50.43,16.49-51.92,42.36-6.27-63.07-50.82-42.36-50.82-42.36,0-36.92,26.76-66.85,51.37-66.85s51.37,29.93,51.37,66.85Z"/>
+      <path class="cls-5" d="M601.36,349.71c0,36.92-11.06,66.85-51.37,66.85.37-9.31.15-17.43-.55-24.49,1.49-25.87,10.71-60.59,51.92-42.36Z"/>
+      <path class="cls-5" d="M549.99,416.56c-40.3,0-51.37-29.93-51.37-66.85,0,0,44.55-20.71,50.82,42.36-.77,13.44.55,24.49.55,24.49Z"/>
+      <polyline class="cls-1" points="627.98 412.29 810.34 318.3 972.2 451.94"/>
+      <polyline class="cls-1" points="700.46 544 894.98 544 1053.86 775.64"/>
+      <polyline class="cls-1" points="639.37 720.45 869.74 848.4 935.07 1068.16"/>
+      <polyline class="cls-1" points="441.57 432.49 259.46 348.7 48.61 462.34"/>
+      <polyline class="cls-1" points="388.46 544 170.37 554.4 10 739.94"/>
+      <polyline class="cls-1" points="453.61 720.45 160.05 878.99 144.14 1133.45"/>
+      <path class="cls-11" d="M412.97,669.78s137.31,90.68,267.04,0"/>
+      <path class="cls-11" d="M388.46,591.96s165.9,85.76,315.03,0"/>
+      <path class="cls-11" d="M400.17,500.82s166.04,80.38,291.55,0"/>
+      <path class="cls-11" d="M447.32,426.79s86.47,74.79,192.05,0"/>
+      <line class="cls-9" x1="456.24" y1="1375.76" x2="647.5" y2="1375.76"/>
+      <path class="cls-9" d="M403.72,1271.91s154.66,41.87,291.97,0"/>
+      <path class="cls-9" d="M367.74,1168.61s188.82,66.63,361.52,0"/>
+      <path class="cls-9" d="M347.81,1079.03s216.63,67.91,397.43,0"/>
+      <path class="cls-9" d="M343.1,994.67s222.96,52.5,406.78,0"/>
+      <path class="cls-9" d="M365.05,889.83s185.57,71.34,362.88,0"/>
+      <path class="cls-9" d="M423.69,795.6s136.62,76.72,245.6,0"/>
+    </g>
+  </g>
+</svg>

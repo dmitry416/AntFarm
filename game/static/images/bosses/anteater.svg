@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 668.62 1723.11">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #1d1d1b;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 17px;
+      }
+
+      .cls-2 {
+        fill: #634e42;
+      }
+
+      .cls-3 {
+        fill: #4a3f39;
+      }
+
+      .cls-4 {
+        fill: #3c3c3b;
+      }
+
+      .cls-5 {
+        fill: #dadada;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <ellipse class="cls-3" cx="564.14" cy="139.04" rx="134.34" ry="90.52" transform="translate(251.42 628.72) rotate(-71.28)"/>
+      <ellipse class="cls-3" cx="104.48" cy="139.04" rx="90.52" ry="134.34" transform="translate(-39.09 40.88) rotate(-18.72)"/>
+      <path class="cls-2" d="M562.68,902.81c-19.34,294.95-52.08,521.73-105.36,668.22-130.14-106.3-231.25,1.8-231.25,1.8-53.67-146.28-92.72-350.87-106.09-670.02C101.2,454.86,17.14,91.02,341.33,91.02s250.69,364.41,221.35,811.79Z"/>
+      <ellipse class="cls-5" cx="190.46" cy="395.62" rx="57.11" ry="42.1"/>
+      <ellipse class="cls-5" cx="489.66" cy="395.62" rx="57.11" ry="42.1"/>
+      <path class="cls-4" d="M457.32,1571.03c-.22.6-.44,1.2-.66,1.8-32.81,89.45-72.51,141.78-115.29,141.78s-82.5-52.33-115.29-141.78c0,0,101.11-108.1,231.25-1.8Z"/>
+      <circle class="cls-1" cx="191.57" cy="394.65" r="14.66"/>
+      <circle class="cls-1" cx="489.66" cy="394.65" r="14.66"/>
+    </g>
+  </g>
+</svg>

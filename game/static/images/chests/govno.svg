@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 605.56 519.63">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #754c24;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-5 {
+        stroke: #000;
+      }
+
+      .cls-2 {
+        fill: #603813;
+      }
+
+      .cls-3 {
+        stroke: #42210b;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #666;
+      }
+
+      .cls-4 {
+        stroke: #603813;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g>
+      <rect class="cls-2" x="5" y="203.24" width="595.56" height="311.39"/>
+      <path class="cls-1" d="M473.28,5c70.3,0,127.28,56.99,127.28,127.28v71.81H5v-71.81C5,61.99,61.99,5,132.28,5h341Z"/>
+      <rect class="cls-5" x="271.78" y="142.31" width="62" height="124" rx="13.49" ry="13.49"/>
+      <line class="cls-3" x1="35.78" y1="469.31" x2="129.51" y2="469.31"/>
+      <line class="cls-3" x1="293.19" y1="429.31" x2="414.51" y2="429.31"/>
+      <line class="cls-3" x1="501.57" y1="469.31" x2="566.01" y2="469.31"/>
+      <line class="cls-3" x1="110.38" y1="374.31" x2="272.18" y2="374.31"/>
+      <line class="cls-3" x1="441.83" y1="374.31" x2="509.78" y2="374.31"/>
+      <line class="cls-3" x1="489.56" y1="314.31" x2="321.18" y2="314.31"/>
+      <line class="cls-3" x1="57.92" y1="266.31" x2="149.94" y2="266.31"/>
+      <line class="cls-3" x1="459.78" y1="258.31" x2="558.57" y2="258.31"/>
+      <line class="cls-4" x1="61.96" y1="151.31" x2="172.1" y2="151.31"/>
+      <line class="cls-4" x1="430.45" y1="111.31" x2="501.11" y2="111.31"/>
+      <line class="cls-4" x1="135.55" y1="60.31" x2="284" y2="60.31"/>
+    </g>
+  </g>
+</svg>

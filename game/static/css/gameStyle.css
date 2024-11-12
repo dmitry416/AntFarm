@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    color: #333333;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #E6E6E6;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #CCCCCC;
+}
+
+.content {
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#header  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: block;
+    align-items: center;
+}
+
+.user-info:hover {
+    cursor: pointer;
+}
+
+.links, .link, .user-info, .user-money, .user-image {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.link a, .user-money, .user-image {
+    font-size: 1.3rem;
+    padding: 20px;
+}
+
+.link {
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.link:hover {
+    background-color: #E6E6E6;
+    transition: 0.3s;
+}
+
+.user-money, .user-image {
+    padding: 10px;
+}
+
+#selected {
+    background: #59BE40;
+}
+
+#selected a {
+    color: #fff;
+}
+
+#header a {
+    padding: 20px;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.box {
+    background: #FFFFFF;
+    width: 100%;
+    /*height: 300px;*/
+    display: inline-block;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: 5px solid #CCCCCC;
+    vertical-align: top;
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.img {
+    object-fit: cover;
+}
+
+button {
+    border: none;
+    background: #59BE40;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button:hover, #selected:hover {
+    background: #428c30;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer {
+    background: #B3B3B3;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+footer span, footer a, footer div {
+    display: inline;
+    margin: auto 5%;
+    vertical-align: middle;
+}
+
+footer div img {
+    margin: auto 10px;
+}
+
+footer span, footer a {
+    color: #666666;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+/* Boss + Leaderboard */
+.in-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Boss */
+#boss {
+    width: 30%;
+    height: 350px;
+    align-content: center;
+}
+
+#boss img, #boss button {
+    display: block;
+    margin: 20px auto;
+}
+
+#boss button {
+    font-size: 1.2rem;
+}
+
+/* Leaderboard */
+
+#leaderboard {
+    width: calc(70% - 40px);
+    height: 350px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leaderboard {
+    width: 100%;
+}
+
+.place-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 10px;
+    text-align: center;
+    border-bottom: 2px solid #E6E6E6;
+    padding: 5px;
+}
+
+#scroll-leader {
+    height: 220px;
+}
+
+/* Ants */
+
+#ants {
+    height: 490px;
+}
+
+.ant-holder {
+    height: 300px;
+    display: flex;
+    overflow-y: auto;
+}
+
+.ant-holder::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+
+.ant-holder::-webkit-scrollbar-thumb {
+    background: #59BE40;
+    border-radius: 5px;
+}
+
+.ant-card {
+    display: block;
+    border: 8px solid #CCCCCC;
+    border-radius: 20px;
+    width: 160px;
+    padding: 5px;
+    margin: auto 10px;
+}
+
+.ant-card img, .ant-card span, .ant-card button {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.ant-card img {
+    width: 120px;
+    height: 120px;
+    /*border-radius: 100%;*/
+}
+
+.ant-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.ant-bottom span, .ant-bottom button {
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* Items */
+
+#items {
+    display: block;
+    height: 600px;
+}
+
+#items button {
+    display: block;
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+.item-holder {
+    width: 100%;
+}
+
+.item-card {
+    width: 100%;
+}
+
+.item-card td {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 3px;
+    border: 5px solid #FFFFFF;
+    border-radius: 20px;
+    vertical-align: middle;
+    background: #E6E6E6;
+}
+
+.item-card span {
+    padding: 0;
+}
+
+.item-card img {
+    width: 60px;
+    height: 60px;
+    /*border-radius: 10px;*/
+    padding: 0;
+}
+
+.scroll-table {
+    height: 400px;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.scroll-table::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+}
+
+.scroll-table::-webkit-scrollbar-thumb {
+    background: #59BE40;
+    border-radius: 5px;
+}
+
+/* Chest */
+
+.chest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+}
+
+.left {
+    border: 30px solid #CCCCCC;
+    background: #CCCCCC;
+    border-radius: 30px;
+}
+
+.right {
+
+}
+
+.right button {
+    display: block;
+    padding: 10px 50px;
+    margin: 30px auto;
+    font-size: 1.2rem;
+}
+
