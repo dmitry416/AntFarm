@@ -1,4 +1,5 @@
 const csrftoken = $("[name=csrfmiddlewaretoken]").val();
+let isSended = false;
 
 function UpdateAnts() {
     $(".ant-card").remove();
@@ -108,6 +109,7 @@ function SellItem(name) {
 }
 
 function returnAnts() {
+    isSended = false;
     $.get("api/getrewardtime/",
         function (data, textStatus) {
             if (data["onway"]) {
@@ -144,12 +146,14 @@ $('.fight').click(function () {
 });
 
 $('.send-all').click(function () {
-    $.post("api/sendall/",
-        {csrfmiddlewaretoken: csrftoken},
-        function (data, textStatus) {
-            UpdateAnts();
-        });
-
+    if (!isSended) {
+        $.post("api/sendall/",
+            {csrfmiddlewaretoken: csrftoken},
+            function (data, textStatus) {
+                UpdateAnts();
+            });
+    }
+    isSended = true;
 });
 
 $('.sell-all').click(function () {
