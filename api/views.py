@@ -1,5 +1,3 @@
-import random
-
 from django.db.models import Sum
 from django.http import JsonResponse
 from django.utils import timezone
@@ -17,15 +15,23 @@ def get_leaderboard(request):
 def get_user_ants(request):
     user_id = request.session['id']
     user = User.objects.get(user_id=user_id)
-    query = UserAnts.objects.filter(user=user)
+    query = UserAnts.objects.filter(user=user, count__gt=-1)
     data = UserAntsSerializer(query, many=True).data
     return JsonResponse(data, safe=False)
 
 
-def get_prices(request):
-    items = Item.objects.all()
-    serializer = ItemSerializer(items, many=True)
-    return JsonResponse(serializer.data, safe=False)
+def get_user_items(request):
+    user_id = request.session['id']
+    user = User.objects.get(user_id=user_id)
+    query = UserItems.objects.filter(user=user, count__gt=0)
+    data = UserItemsSerializer(query, many=True).data
+    return JsonResponse(data, safe=False)
+
+
+def get_user_money(request):
+    user_id = request.session['id']
+    user = User.objects.get(user_id=user_id)
+    return JsonResponse({'money': user.money}, safe=False)
 
 
 def get_current_boss(request):
@@ -49,11 +55,42 @@ def send_ants(request):
             return JsonResponse({'error': 'user not authenticated'}, status=401)
 
         user = User.objects.get(user_id=user_id)
-        user_ants = UserAnts.objects.filter(user=user, is_sent=False)
-        return_time = timezone.now() + timezone.timedelta(hours=2)
+        user_ants = UserAnts.objects.filter(user=user, is_sent=False, count__gt=0)
 
-        updated_count = user_ants.update(is_sent=True, return_datetime=return_time)
-        return JsonResponse({'success': updated_count != 0})
+        for user_ant in user_ants:
+            return_time = timezone.now() + user_ant.ant.expedition_duration
+            user_ant.is_sent = True
+            user_ant.return_datetime = return_time
+            user_ant.save()
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+
+@require_POST
+def get_reward(request):
+    try:
+        user_id = request.session.get('id')
+        if not user_id:
+            return JsonResponse({'error': 'user not authenticated'}, status=401)
+
+        user = User.objects.get(user_id=user_id)
+
+        current_time = timezone.now()
+        user_ants = UserAnts.objects.filter(user=user, is_sent=True, return_datetime__lte=current_time)
+
+        for user_ant in user_ants:
+            user_ant.return_datetime = None
+            user_ant.is_sent = False
+
+            for _ in range(user_ant.count):
+                rnd_item = user_ant.ant.get_random_item()
+                user_item, _ = UserItems.objects.get_or_create(user=user, item=rnd_item)
+                user_item.count += 1
+                user_item.save()
+
+            user_ant.save()
+        return JsonResponse({'success': True})
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
 
@@ -65,17 +102,12 @@ def buy_ant(request):
         if not user_id:
             return JsonResponse({'error': 'user not authenticated'}, status=401)
 
-        ant_id = request.POST.get('ant_id')
-        if not ant_id:
+        ant_name = request.POST.get('name')
+        if not ant_name:
             return JsonResponse({'error': 'ant ID is required'}, status=400)
 
-        try:
-            ant_id = int(ant_id)
-        except ValueError:
-            return JsonResponse({'error': 'invalid ant ID'}, status=400)
-
         user = User.objects.get(user_id=user_id)
-        ant = Ant.objects.get(id=ant_id)
+        ant = Ant.objects.get(name=ant_name)
 
         user_ant, _ = UserAnts.objects.get_or_create(user=user, ant=ant)
         count = user_ant.count
@@ -86,7 +118,7 @@ def buy_ant(request):
         if user_ant.is_sent:
             return JsonResponse({'error': 'ant is already sent'}, status=400)
 
-        price = round(ant.minimal_cost * (1.1 ** count))
+        price = user_ant.get_cost()
 
         if user.money < price:
             return JsonResponse({'error': 'not enough money'}, status=400)
@@ -95,7 +127,8 @@ def buy_ant(request):
         user_ant.count += 1
         user.save()
         user_ant.save()
-        return JsonResponse({'success': True}, status=200)
+
+        return JsonResponse({'success': True, 'cost': user_ant.get_cost()}, status=200)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
 
@@ -164,20 +197,15 @@ def sell_item(request):
             return JsonResponse({'error': 'user not authenticated'}, status=401)
 
         user = User.objects.get(user_id=user_id)
-        item_id = request.POST.get('item_id')
-        if not item_id:
-            return JsonResponse({'error': 'item_id is required'}, status=400)
+        item_name = request.POST.get('name')
+        if not item_name:
+            return JsonResponse({'error': 'item_name is required'}, status=400)
 
-        try:
-            item_id = int(item_id)
-        except ValueError:
-            return JsonResponse({'error': 'invalid item_id'}, status=400)
-
-        item = Item.objects.get(id=item_id)
+        item = Item.objects.get(name=item_name)
         user_item = UserItems.objects.get(user=user, item=item)
 
         if user_item.count <= 0:
-            return JsonResponse({'error': 'You do not have this item'}, status=400)
+            return JsonResponse({'error': 'you do not have this item'}, status=400)
 
         user.money += item.cost
         user_item.count -= 1
