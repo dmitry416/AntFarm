@@ -21,6 +21,7 @@ class AntItemChance(models.Model):
 class Chest(models.Model):
     path_to_image = models.CharField(max_length=255)
     cost = models.IntegerField()
+    weight = models.IntegerField()
 
 
 class ChestAntChance(models.Model):
@@ -39,13 +40,13 @@ class User(models.Model):
     name = models.CharField(max_length=32)
     image_url = models.CharField(max_length=255, null=True)
 
-    chest = models.ForeignKey(Chest, on_delete=models.SET_NULL, null=True)
-    chest_open_time = models.DateTimeField(null=True)
+    chest = models.ForeignKey(Chest, on_delete=models.SET_NULL, null=True, blank=True, default=None)
+    chest_open_time = models.DateTimeField(null=True, blank=True)
 
     ant_count = models.IntegerField(default=0)
 
     money = models.IntegerField(default=0)
-    boss_date = models.DateField(null=True)
+    boss_date = models.DateField(null=True, blank=True)
 
 
 class UserAnts(models.Model):
@@ -53,7 +54,7 @@ class UserAnts(models.Model):
     ant = models.ForeignKey(Ant, on_delete=models.CASCADE)
     count = models.IntegerField(default=-1)
     is_sent = models.BooleanField(default=False)
-    return_datetime = models.DateTimeField(null=True)
+    return_datetime = models.DateTimeField(null=True, blank=True, default=None)
 
 
 class UserItems(models.Model):
