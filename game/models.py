@@ -79,6 +79,10 @@ class User(models.Model):
     money = models.IntegerField(default=0)
     boss_date = models.DateField(null=True, blank=True)
 
+    def link_to_ants(self):
+        for ant in Ant.objects.all():
+            UserAnts.objects.get_or_create(user=self, ant=ant)
+
     def __str__(self):
         return f'{self.name} ({self.user_id})'
 
@@ -86,13 +90,15 @@ class User(models.Model):
 class UserAnts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ant = models.ForeignKey(Ant, on_delete=models.CASCADE)
-    count = models.IntegerField(default=-1)
+    count = models.IntegerField(default=0)
     is_sent = models.BooleanField(default=False)
     return_datetime = models.DateTimeField(null=True, blank=True, default=None)
 
     def get_cost(self):
         if self.count == 0:
-            return 0
+            if self.ant.id == 1:
+                return 0
+            return self.ant.minimal_cost
 
         return int((1.2 * self.ant.minimal_cost) ** self.count)
 
