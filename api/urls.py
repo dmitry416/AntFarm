@@ -7,6 +7,7 @@ urlpatterns = [
     path('userants/', get_user_ants, name='userants'),
     path('useritems/', get_user_items, name='get_user_items'),
     path('usermoney/', get_user_money, name='get_user_money'),
+    path('getrewardtime/', get_reward_time, name='get_reward_time'),
     path('current_boss/', get_current_boss, name='current_boss'),
     path('sendall/', send_ants, name='send_ants'),
     path('getreward/', get_reward, name='get_reward'),

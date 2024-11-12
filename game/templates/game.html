@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static %}{% csrf_token %}
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="{% static "css/gameStyle.css" %}">
@@ -42,27 +42,28 @@
                             <td class="place-item">Муравьи</td>
                             <td class="place-item">Имя игрока</td>
                         </tr>
-                        {% for place in leaderboard %}
-                        <tr class="place">
-                            <td class="place-item">{{ place.0 }}</td>
-                            <td class="place-item">{{ place.1 }}</td>
-                            <td class="place-item">{{ place.2 }}</td>
-                        </tr>
-                        {% endfor %}
+{#                        {% for place in leaderboard %}#}
+{#                        <tr class="place">#}
+{#                            <td class="place-item">{{ place.0 }}</td>#}
+{#                            <td class="place-item">{{ place.1 }}</td>#}
+{#                            <td class="place-item">{{ place.2 }}</td>#}
+{#                        </tr>#}
+{#                        {% endfor %}#}
                     </table>
                 </div>
             </div>
         </div>
         <div class="box" id="ants">
             <h1>ТВОИ МУРАВЬИ</h1>
-            <div class="ant-holder">
-                {% for ant in ants %}
-                <div class="ant-card">
-                    <img src="{% static ant.0 %}" alt="Ant image">
-                    <span>x{{ ant.1 }}</span>
-                    <button type="button" class="buy">$ {{ ant.2 }}</button>
-                </div>
-                {% endfor %}
+            <div class="ant-holder" action="/api/buyant/" method="post">
+
+{#                {% for ant in ants %}#}
+{#                <div class="ant-card">#}
+{#                    <img src="{% static ant.0 %}" alt="Ant image">#}
+{#                    <span>x{{ ant.1 }}</span>#}
+{#                    <button type="button" class="buy">$ {{ ant.2 }}</button>#}
+{#                </div>#}
+{#                {% endfor %}#}
             </div>
             <div class="ant-bottom">
                 <span id="total-ants">Всего: {{ total_ants }}</span>

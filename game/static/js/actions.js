@@ -1,41 +1,73 @@
-let UpdateAnts = function () {
+const csrftoken = $("[name=csrfmiddlewaretoken]").val();
+
+function UpdateAnts() {
     $(".ant-card").remove();
     $.get("api/userants",
         function (data, textStatus) {
-            $.each(data["ants"], function (i, val) {
-                $(".ant-holder").append(`
-				<div class="ant-card">
-                    <img src="${val[0]}" alt="Ant image">
-                    <span>x${val[1]}</span>
-                    <button type="button" class="buy">$ ${val[2]}</button>
-                </div>`);
+            let total = 0;
+            $.each(data, function (i, val) {
+                total += val["count"];
+                if (val["is_sent"]) {
+                    $(".ant-holder").append(`
+			    	<div class="ant-card">
+                        <img src="static/${val["ant_image"]}" alt="Ant image">
+                        <span>${val["ant_name"]}</span>
+                        <span>x${val["count"]}</span>
+                        <button type="button" class="buy" style="background: #CCCCCC">В пути</button>
+                    </div>`);
+                } else {
+                    $(".ant-holder").append(`
+    				<div class="ant-card">
+                        <img src="static/${val["ant_image"]}" alt="Ant image">
+                        <span>${val["ant_name"]}</span>
+                        <span>x${val["count"]}</span>
+                        <button type="button" class="buy" onclick="BuyAnt(\'${val['ant_name']}\')">$ ${val['cost']}</button>
+                    </div>`);
+                }
+
             });
+            $("#total-ants").html("Всего: " + total);
         });
 }
-let UpdateItems = function () {
+
+function UpdateItems() {
     $(".item-card").remove();
-    $.get("api/items",
+    $.get("api/useritems",
         function (data, textStatus) {
-            $.each(data["items"], function (i, val) {
+            $.each(data, function (i, val) {
                 $(".item-holder").append(`
 				<tr class="item-card">
-                    <td><img src="${val[0]}" alt="Item image"></td>
-                    <td><span>${val[1]}</span></td>
-                    <td><button type="button" class="sell">$ ${val[2]}</button></td>
+                    <td><img src="static/${val["item_image"]}" alt="Item image"></td>
+                    <td><span>${val["item_name"]}</span></td>
+                    <td><span>${val["count"]} x $ ${val["item_cost"]}</span></td>
+                    <td><button type="button" class="sell" onclick="SellItem(\'${val['item_name']}\')">$ ${val["count"] * val["item_cost"]}</button></td>
                 </tr>`);
             });
         });
 }
 
-let UpdateMoney = function () {
-    $.get("api/money",
+function UpdateMoney() {
+    $.get("api/usermoney",
         function (data, textStatus) {
             $(".user-money").html("$ " + data["money"]);
-            alert("Че мы получили: " + data);
         });
 }
 
-let UpdateChest = function () {
+function UpdateLeaderboard() {
+    $.get("api/leaderboard/",
+        function (data, textStatus) {
+            $.each(data, function (i, val) {
+                $(".leaderboard").append(`
+                    <tr class="place">
+                        <td class="place-item">${i + 1}</td>
+                        <td class="place-item">${val["ant_count"]}</td>
+                        <td class="place-item">${val["name"]}</td>
+                    </tr>`)
+            });
+        });
+}
+
+function UpdateChest() {
     $.get("api/chest",
         function (data, textStatus) {
             if ($.isEmptyObject(data)) {
@@ -44,6 +76,48 @@ let UpdateChest = function () {
                 alert("Это тоже потом");
             }
             alert("Че мы получили: " + data);
+        });
+}
+
+function BuyAnt(name) {
+    $.post("api/buyant/",
+        {
+            csrfmiddlewaretoken: csrftoken,
+            "name": name
+        },
+        function (data, textStatus) {
+            if (data["success"]) {
+                $(this).html("$ " + data["cost"]);
+                UpdateAnts();
+                UpdateMoney();
+            }
+            // $("#total-ants").html("Всего: " + data["total"])
+        });
+}
+
+function SellItem(name) {
+    $.post("api/sellitem/",
+        {
+            csrfmiddlewaretoken: csrftoken,
+            "name": name
+        },
+        function (data, textStatus) {
+            UpdateItems();
+            UpdateMoney();
+        });
+}
+
+function returnAnts() {
+    $.get("api/getrewardtime/",
+        function (data, textStatus) {
+            if (data["onway"]) {
+                $.post("api/getreward/",
+                    {csrfmiddlewaretoken: csrftoken},
+                    function (data, textStatus) {
+                        UpdateItems();
+                        UpdateAnts();
+                    });
+            }
         });
 }
 
@@ -69,47 +143,22 @@ $('.fight').click(function () {
     UpdateAnts();
 });
 
-$('.buy').click(function () {
-    alert("Купить: " + parseInt($(this).text().substring(2)));
-    $.get("api/ant/buy",
-        function (data, textStatus) {
-            $(this).html("$ " + data["cost"]);
-            $("#total-ants").html("Всего: " + data["total"])
-            alert("Че мы получили: " + data);
-        });
-    UpdateAnts();
-    UpdateMoney();
-});
-
 $('.send-all').click(function () {
-    $.post("api/ant/sendall",
-        {},
+    $.post("api/sendall/",
+        {csrfmiddlewaretoken: csrftoken},
         function (data, textStatus) {
-            alert("Че мы получили: " + data);
+            UpdateAnts();
         });
-    UpdateAnts();
-});
 
-$('.sell').click(function () {
-    $.post("api/item/sell",
-        {
-            name: parseInt($(this).prev().text())
-        },
-        function (data, textStatus) {
-            alert("Че мы получили: " + data);
-        });
-    UpdateItems();
-    UpdateMoney();
 });
 
 $('.sell-all').click(function () {
-    $.post("api/item/sellall",
-        {},
+    $.post("api/sellall/",
+        {csrfmiddlewaretoken: csrftoken},
         function (data, textStatus) {
-            alert("Че мы получили: " + data);
+            UpdateItems();
+            UpdateMoney();
         });
-	UpdateItems();
-    UpdateMoney();
 });
 
 $('.chest-open').click(function () {
@@ -132,9 +181,11 @@ $('.chest-sell').click(function () {
 });
 
 let main = function () {
-    // UpdateItems();
-    // UpdateMoney();
+    UpdateItems();
     UpdateAnts();
+    UpdateLeaderboard();
+    UpdateMoney();
+    setInterval(returnAnts, 5000);
 }
 
 main();

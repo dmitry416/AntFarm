@@ -215,11 +215,11 @@ h1 {
 /* Ants */
 
 #ants {
-    height: 450px;
+    height: 490px;
 }
 
 .ant-holder {
-    height: 260px;
+    height: 300px;
     display: flex;
     overflow-y: auto;
 }
@@ -253,7 +253,7 @@ h1 {
 .ant-card img {
     width: 120px;
     height: 120px;
-    border-radius: 100%;
+    /*border-radius: 100%;*/
 }
 
 .ant-bottom {
@@ -308,7 +308,7 @@ h1 {
 .item-card img {
     width: 60px;
     height: 60px;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     padding: 0;
 }
 

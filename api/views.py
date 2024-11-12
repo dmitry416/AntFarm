@@ -47,6 +47,21 @@ def get_current_boss(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 
+def get_reward_time(request):
+    user_id = request.session.get('id')
+
+    user_ants = UserAnts.objects.filter(user=user_id, is_sent=True)
+    min_time = float('inf')
+
+    for user_ant in user_ants:
+        min_time = min(min_time, max(int(user_ant.return_datetime.timestamp() - timezone.now().timestamp()), 0))
+
+    if min_time == float('inf'):
+        return JsonResponse({'time': 0, 'onway': False}, status=200, safe=False)
+
+    return JsonResponse({'time': min_time, 'onway': True}, status=200, safe=False)
+
+
 @require_POST
 def send_ants(request):
     try:
@@ -207,8 +222,8 @@ def sell_item(request):
         if user_item.count <= 0:
             return JsonResponse({'error': 'you do not have this item'}, status=400)
 
-        user.money += item.cost
-        user_item.count -= 1
+        user.money += item.cost * user_item.count
+        user_item.count = 0
         user.save()
         user_item.save()
         return JsonResponse({'success': True})

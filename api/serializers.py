@@ -11,10 +11,11 @@ class LeaderboardSerializer(serializers.ModelSerializer):
 class UserAntsSerializer(serializers.ModelSerializer):
     ant_image = serializers.SlugRelatedField(source='ant', slug_field='path_to_image', read_only=True)
     cost = serializers.SerializerMethodField()
+    ant_name = serializers.SlugRelatedField(source='ant', slug_field='name', read_only=True)
 
     class Meta:
         model = UserAnts
-        fields = ['ant_image', 'count', 'cost']
+        fields = ['ant_image', 'count', 'cost', 'ant_name', 'is_sent']
 
     def get_cost(self, obj):
         return obj.get_cost()
