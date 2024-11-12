@@ -15,7 +15,9 @@ def get_leaderboard(request):
 def get_user_ants(request):
     user_id = request.session['id']
     user = User.objects.get(user_id=user_id)
-    query = UserAnts.objects.filter(user=user, count__gt=-1)
+    sent_ants = UserAnts.objects.filter(user=user, is_sent=True, count__gt=-1).order_by('id')
+    not_sent_ants = UserAnts.objects.filter(user=user, is_sent=False, count__gt=-1).order_by('id')
+    query = list(sent_ants) + list(not_sent_ants)
     data = UserAntsSerializer(query, many=True).data
     return JsonResponse(data, safe=False)
 
