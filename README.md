@@ -1,10 +1,13 @@
 # ANT FARM
 #### An exciting game about ants!
 
+
+## <a href="https://antgame.ru">Game here</a>
+
 ## Authors
 #### <a href="https://github.com/dmitry416">Mozharov Dmitry</a>
 #### <a href="https://github.com/verhovv">Verhovv Vladimir</a>
-#### <a href="https://github.com/miderror">Zabrovski Pavel</a>
+#### <a href="https://github.com/miderror">Zabrovsky Pavel</a>
 #### <a href="https://github.com/Fotlex">Simankov Alexander</a>
 
 
