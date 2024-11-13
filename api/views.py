@@ -142,6 +142,7 @@ def buy_ant(request):
 
         user.money -= price
         user_ant.count += 1
+        user.ant_count += 1
         user.save()
         user_ant.save()
 
